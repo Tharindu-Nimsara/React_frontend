@@ -12,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
         <div >
+          <Header>  </Header>
           <Routes path="/*">
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
