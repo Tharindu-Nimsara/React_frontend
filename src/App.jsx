@@ -1,17 +1,28 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './components/header'
 import ProductCard from './components/productCard'
+import HomePage from './pages/home'
+import LoginPage from './pages/login'
+import SignupPage from './pages/signup'
 
 function App() {
   
 
   return (
-    <>
-      <Header></Header>
-      <h1>hello</h1> 
-      <ProductCard name="Appel Laptop" price="1000" description="dfhaskhfaksjdhakjfa" picture="https://picsum.photos/id/1/200/300"/>
-      <ProductCard name="Asus Laptop" price="800" description="keiwwerupweiropweirwprw" picture="https://picsum.photos/id/3/200/300"/>
-    </>
+    <BrowserRouter>
+        <div >
+          <Routes path="/*">
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+          </Routes>
+        </div>
+    
+    
+    
+    </BrowserRouter>
+    
   )
 }
 
