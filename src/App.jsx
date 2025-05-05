@@ -7,6 +7,7 @@ import LoginPage from './pages/login'
 import SignupPage from './pages/signup'
 import NotFoundPage from './pages/NotFound'
 import AdminPage from './pages/adminPage'
+import TestPage from './pages/testPage'
 
 function App() {
   
@@ -20,6 +21,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />     {/* localhost:5172/login */}
             <Route path="/signup" element={<SignupPage />} />   {/* localhost:5172/signup */}
             <Route path="/admin/*" element={<AdminPage />} />   {/* localhost:5172/admin */}
+            <Route path="/test" element={<TestPage/>} />       {/* localhost:5172/test */}
+            
             
             <Route path="/*" element={<NotFoundPage></NotFoundPage>} />       {/* localhost:5172/anything */}
           </Routes>
