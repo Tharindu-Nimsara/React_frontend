@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function LoginPage(){
     //hook to manage the state of the username and password
@@ -18,8 +19,10 @@ export default function LoginPage(){
                 password: password
             })
             console.log(response);
+            toast.success("Login successful!");
         }catch(e){
-            console.log(e);
+            
+            toast.error(e.response.data.message);
         }
         
         

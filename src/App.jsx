@@ -8,6 +8,7 @@ import SignupPage from './pages/signup'
 import NotFoundPage from './pages/NotFound'
 import AdminPage from './pages/adminPage'
 import TestPage from './pages/testPage'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
         <div >
+          <Toaster position='top-right'></Toaster> 
           <Header>  </Header>
           <Routes path="/*">  {/* localhost:5172/ */} 
             <Route path="/" element={<HomePage />} />         {/* localhost:5172/home */} 
