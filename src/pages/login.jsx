@@ -1,4 +1,30 @@
+import axios from "axios";
+import { useState } from "react";
+
 export default function LoginPage(){
+    //hook to manage the state of the username and password
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    async function handleLogin(e){
+        e.preventDefault(); // prevent form reload
+        console.log(email);
+        console.log(password);
+    
+        try{
+
+            const response = await axios.post("http://localhost:5000/api/user/login", {
+                email: email,
+                password: password
+            })
+            console.log(response);
+        }catch(e){
+            console.log(e);
+        }
+        
+        
+    }
+
     return(
         <div className="w-full h-screen bg-[url(login.jpg)] bg-center bg-cover backdrop-blur-md flex flex-col items-center justify-center">
             
@@ -8,14 +34,25 @@ export default function LoginPage(){
                 </div>
                  
                 <div className="mb-4">
-                    <label className="block text-gray-700 mb-2" htmlFor="username">Username</label>
-                    <input className="border border-gray-300 p-2 w-full rounded" type="text" id="username" name="username" required />
+                    <label className="block text-gray-700 mb-2" htmlFor="username">Email</label>
+                    <input 
+                    onChange={
+                        (e) => {
+                            setEmail(e.target.value);
+                        }
+                    }
+                    value={email}
+                    className="border border-gray-300 p-2 w-full rounded" type="text" id="username" name="username" required />
                 </div>
                 <div className="mb-4">
                     <label className="block text-gray-700 mb-2" htmlFor="password">Password</label>
-                    <input className="border border-gray-300 p-2 w-full rounded" type="password" id="password" name="password" required />
+                    <input onChange={
+                        (e) => {
+                            setPassword(e.target.value);
+                        }
+                    } value={password} className="border border-gray-300 p-2 w-full rounded" type="password" id="password" name="password" required />
                 </div>
-                <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors w-full">Login</button>
+                <button onClick={handleLogin} className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors w-full">Login</button>
             </form>
         </div>
     )
