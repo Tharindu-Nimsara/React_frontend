@@ -28,6 +28,8 @@ export default function LoginPage(){
             //direct the user to admin page if the user is an admin
             if(response.data.role === "admin"){
                 window.location.href = "/admin";
+            }else{
+                window.location.href = "/"; // redirect to home page (see App.jsx)
             }
 
         }catch(e){
