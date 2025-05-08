@@ -5,18 +5,7 @@ import React, { useState } from "react";
 export default function AdminProductsPage(){
 
     const[products, setProducts] = useState(sampleProducts); // state to store the products in an array
-    /*
-    {
-      "productId": "COS001",
-      "name": "Radiant Glow Serum",
-      "altName": "Vitamin C Face Serum",
-      "description": "A brightening serum infused with Vitamin C for a radiant, youthful complexion.",
-      "images": ["radiant_glow_serum.jpg"],
-      "labelledPrice": 55,
-      "price": 49.99,
-      "stock": 120,
-      "isAvailable": true
-    }*/
+  
 
     return(
     
@@ -36,22 +25,18 @@ export default function AdminProductsPage(){
                     </tr>
                 </thead>
                 <tbody className="bg-white">
-                    <tr className="border-b border-gray-300 hover:bg-gray-100">
-                        <td>COS001</td>
-                        <td>Radiant Glow Serum</td>
-                        <td><img src="https://th.bing.com/th/id/OIP.p1leH4kLXcO_zN22Zj-yhAHaHa?rs=1&pid=ImgDetMain" alt="Radiant Glow Serum" className="w-20 h-20"/></td>
-                        <td>55</td>
-                        <td>49.99</td>
-                        <td>120</td>
-                    </tr>
-                    <tr className="border-b border-gray-300 hover:bg-gray-100">
-                        <td>COS002</td>
-                        <td>Hydra Boost Moisturizer</td>
-                        <td><img src="https://th.bing.com/th/id/OIP.p1leH4kLXcO_zN22Zj-yhAHaHa?rs=1&pid=ImgDetMain" alt="Hydra Boost Moisturizer" className="w-20 h-20"/></td>
-                        <td>45</td>
-                        <td>39.99</td>
-                        <td>80</td>
-                    </tr>
+                    {
+                        products[0].map((item) => (
+                            <tr key={item.productId} className="border-b border-gray-300 hover:bg-gray-100">
+                                <td className="px-4 py-2">{item.productId}</td>
+                                <td className="px-4 py-2">{item.name}</td>
+                                <td className="px-4 py-2"><img src={item.images[0]} alt={item.altName} className="w-16 h-16 object-cover"/></td>
+                                <td className="px-4 py-2">${item.labelledPrice}</td>
+                                <td className="px-4 py-2">${item.price}</td>
+                                <td className="px-4 py-2">{item.stock}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </div>
