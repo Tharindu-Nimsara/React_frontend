@@ -1,11 +1,11 @@
 import axios from "axios";
 import { sampleProducts } from "../../assets/sampleData";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function AdminProductsPage(){
 
-    const[products, setProducts] = useState(sampleProducts); // state to store the products in an array
+    const[products, setProducts] = useState([]); // state to store the products in an array
  
     useEffect(() => {
         // fetch the products from the backend using axios
@@ -15,7 +15,7 @@ export default function AdminProductsPage(){
             setProducts(res.data); // set the products state to the data received from the backend
         })
     }   , []); // empty array means this effect will run only once when the component mounts
-    
+
     return(
     
         //overflow-y-scroll is used to make the table scrollable when the screen is small
@@ -35,7 +35,7 @@ export default function AdminProductsPage(){
                 </thead>
                 <tbody className="bg-white">
                     {
-                        products[0].map((item) => (
+                        products.map((item) => (
                             <tr key={item.productId} className="border-b border-gray-300 hover:bg-gray-100">
                                 <td className="px-4 py-2">{item.productId}</td>
                                 <td className="px-4 py-2">{item.name}</td>
