@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage(){
     //hook to manage the state of the username and password
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate(); // hook to navigate to different pages
 
     async function handleLogin(e){
         e.preventDefault(); // prevent form reload
@@ -27,9 +29,9 @@ export default function LoginPage(){
 
             //direct the user to admin page if the user is an admin
             if(response.data.role === "admin"){
-                window.location.href = "/admin";
+                navigate("/admin");
             }else{
-                window.location.href = "/"; // redirect to home page (see App.jsx)
+                navigate("/") // redirect to home page (see App.jsx)
             }
 
         }catch(e){

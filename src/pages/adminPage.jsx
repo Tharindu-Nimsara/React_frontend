@@ -6,6 +6,7 @@ export default function AdminPage(){
 
            <div className="w-[300px] h-full bg-yellow-200 flex flex-col items-center justify-center">
                 <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+                {/* link tag is used to switch between pages smoothly without refreshing whole website */} 
                 <Link to="/admin/products" className="text-blue-500 hover:text-blue-700 m-5" >Products</Link>
                 <Link to="/admin/users" className="text-blue-500 hover:text-blue-700 m-5">Users</Link>
                 <Link to="/admin/orders" className="text-blue-500 hover:text-blue-700 m-5">Orders</Link>
