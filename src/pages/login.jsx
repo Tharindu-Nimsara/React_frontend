@@ -70,6 +70,9 @@ export default function LoginPage(){
                     } value={password} className="border border-gray-300 p-2 w-full rounded" type="password" id="password" name="password" required />
                 </div>
                 <button onClick={handleLogin} className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors w-full">Login</button>
+                <div className="flex justify-center items-center mt-4">
+                    <p className="text-gray-700">Don't have an account? <a href="/signup" className="text-blue-500 hover:text-blue-700">Sign up</a></p>
+                </div>
             </form>
         </div>
     )
