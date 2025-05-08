@@ -13,8 +13,10 @@ export default function LoginPage(){
         console.log(password);
     
         try{
-
-            const response = await axios.post("http://localhost:5000/api/user/login", {
+            // http request to the backend to login the user
+            // using axios to send a post request to the backend with the email and password
+            // the backend url is stored in the .env file
+            const response = await axios.post(import.meta.env.VITE_BACKEND_URL+"/api/user/login", {
                 email: email,
                 password: password
             })
