@@ -25,6 +25,10 @@ export default function LoginPage(){
             // store the token in local storage
             localStorage.setItem("token", response.data.token); 
 
+            //direct the user to admin page if the user is an admin
+            if(response.data.role === "admin"){
+                window.location.href = "/admin";
+            }
 
         }catch(e){
             
