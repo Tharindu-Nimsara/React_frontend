@@ -22,6 +22,10 @@ export default function LoginPage(){
             })
             console.log(response);
             toast.success("Login successful!");
+            // store the token in local storage
+            localStorage.setItem("token", response.data.token); 
+
+
         }catch(e){
             
             toast.error(e.response.data.message);
