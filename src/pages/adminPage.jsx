@@ -3,7 +3,7 @@ import AdminProductsPage from "./admin/adminProductsPage";
 
 export default function AdminPage(){
     return(
-        <div className="w-full h-screen bg-amber-400 flex flex-row  ">
+        <div className="w-full h-screen bg-green flex flex-row  ">
 
            <div className="w-[300px] h-full bg-yellow-200 flex flex-col items-center justify-center">
                 <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
