@@ -40,3 +40,9 @@ function App() {
 
 export default App
  
+
+// https://jzqzeilcxzrwxlenxqvv.supabase.co   URL
+
+
+//anon public key
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6cXplaWxjeHpyd3hsZW54cXZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMDgyOTksImV4cCI6MjA2MzU4NDI5OX0.92o8pafDH-KLl9qJIkiWhi4yYolN8tC71bHeV_mPx6s
