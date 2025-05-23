@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function AdminProductsPage(){
@@ -18,9 +19,9 @@ export default function AdminProductsPage(){
     return(
     
         //overflow-y-scroll is used to make the table scrollable when the screen is small
-        <div className="w-full h-screen bg-blue-100 overflow-y-scroll max-h-full">
-
-            <table className="w-full table-auto border-collapse border border-gray-300 text-center">
+        <div className="w-full h-screen bg-blue-100 overflow-y-scroll max-h-full relative">
+            <Link to="/admin/add-product" className="absolute cursor-pointer bottom-20  right-5 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Add Product</Link>
+            <table className="w-full table-auto border-collapse border border-gray-300 text-center ">
                 <thead>
                     <tr>
                         <th className="px-4 py-2">Product ID</th>
@@ -47,6 +48,7 @@ export default function AdminProductsPage(){
                     }
                 </tbody>
             </table>
+
         </div>
     )
 
