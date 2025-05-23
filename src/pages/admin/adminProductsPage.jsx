@@ -1,5 +1,4 @@
 import axios from "axios";
-import { sampleProducts } from "../../assets/sampleData";
 import { useEffect, useState } from "react";
 
 
