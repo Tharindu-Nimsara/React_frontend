@@ -41,7 +41,7 @@ function App() {
 export default App
  
 
-// https://jzqzeilcxzrwxlenxqvv.supabase.co   URL
+// https://avcszskxqccnkeybnvqh.supabase.co  URL
 
 
 //anon public key

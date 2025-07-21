@@ -4,12 +4,12 @@ import { createClient } from "@supabase/supabase-js";
 // this file is used to upload images to supabase storage
 // and get the public url of the image
 
-const url = "https://jzqzeilcxzrwxlenxqvv.supabase.co" 
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6cXplaWxjeHpyd3hsZW54cXZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMDgyOTksImV4cCI6MjA2MzU4NDI5OX0.92o8pafDH-KLl9qJIkiWhi4yYolN8tC71bHeV_mPx6s"
+const url = "https://avcszskxqccnkeybnvqh.supabase.co" 
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF2Y3N6c2t4cWNjbmtleWJudnFoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMDgxMDEsImV4cCI6MjA2MzU4NDEwMX0.9c3s9ostJO1jVV9BzV6IdyHrDu2cLNk4F7avTUAFkeI"
 
 const supabase = createClient(url, key); 
 
-export default function mediaUpaload(file){
+export default function mediaUpload(file){
     
     const mediaUploadPromise = new Promise(
         (resolve, reject)=>{
