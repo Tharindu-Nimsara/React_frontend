@@ -18,16 +18,14 @@ function App() {
     <BrowserRouter>
         <div >
           <Toaster position='top-right'></Toaster> 
-          <Header>  </Header>
+          {/* <Header>  </Header> */}
           <Routes path="/*">  {/* localhost:5172/ */} 
-            <Route path="/" element={<HomePage />} />         {/* localhost:5172/home */} 
             <Route path="/login" element={<LoginPage />} />     {/* localhost:5172/login */}
             <Route path="/signup" element={<RegisterPage />} />   {/* localhost:5172/signup */}
             <Route path="/admin/*" element={<AdminPage />} />   {/* localhost:5172/admin */}
             <Route path="/test" element={<TestPage/>} />       {/* localhost:5172/test */}
             
-            
-            <Route path="/*" element={<NotFoundPage></NotFoundPage>} />       {/* localhost:5172/anything */}
+            <Route path="/*" element={<HomePage />} />       {/* localhost:5172/anything */}
           </Routes>
         </div>
     

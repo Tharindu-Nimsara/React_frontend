@@ -1,7 +1,8 @@
 import { Link, Route, Routes } from "react-router-dom";
-import AdminProductsPage from "./admin/adminProductsPage";
 import AddProduct from "./admin/addProduct";
 import AddProductPage from "./admin/addProduct";
+import AdminProductsPage from "./admin/ProductsPage";
+import EditProductPage from "./admin/EditProductPage";
 
 export default function AdminPage(){
     return(
@@ -23,6 +24,7 @@ export default function AdminPage(){
                     <Route path="/reviews" element={<h1>Reviews</h1>} />        {/* localhost:5172/admin/reviews */}
                     <Route path="/*" element={<h1>Not Found</h1>} />       {/* localhost:5172/admin/anything */}    
                     <Route path="/add-product" element={<AddProductPage/>} />       {/* localhost:5172/admin/add-product */}
+                    <Route path="/edit-product/" element={<EditProductPage/>} />       {/* localhost:5172/admin/edit-product/12345 */}
                 </Routes>
 
            </div>
